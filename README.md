@@ -1,1 +1,1 @@
-# rsschool-cv
+# rss-school cv of [Victor Klimov](https://skyris.github.io/rsschool-cv/cv)
