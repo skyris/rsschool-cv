@@ -37,6 +37,7 @@ const promisify = fn => (...args) => {
 ### Skills
 - Programming languages:
   - Javascript
+  - Typescript
   - Python
   - C
   - 1c enterprise
