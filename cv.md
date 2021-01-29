@@ -72,6 +72,8 @@ const promisify = fn => (...args) => {
   - Windows
 
 ### Experience
+- Work as 1c enterprise developer
+- Freelance Web Development
 
 ### Education
 1. [Saint-Petersburg University of Technology and Design](https://sutd.ru) Computer engineering, design and maintenance of light industry machines
