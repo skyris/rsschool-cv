@@ -1,9 +1,8 @@
 :root {
   box-sizing: border-box;
-  font-size: calc(.5em + 1vw);
-  --light-color: #f7f7ff;
+  font-size: calc(0.5em + .7vw);
+  --light-color: #eff;
   --dark-color: #225;
-  --bg-color: #ccc;
 }
 
 *,
@@ -15,11 +14,9 @@
 }
 
 body {
-  font-size: .75rem;
-  line-height: 1.5em; 
   min-height: 100vh;
+  font-size: 1rem;
   font-family: Helvetica, Arial, sans-serif;
-  background: var(--bg-color);
 }
 .title,
 .header,
@@ -30,65 +27,38 @@ body {
 .content {
   margin: 0 auto;
   max-width: 90%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   display: flex;
   box-shadow: -8px 13px 18px 7px rgba(0,0,0,0.53);
 }
 
+.main,
+.aside {
+  padding: 2.5rem 2rem;
+  min-height: 100px;
+}
+
 .main {
   width: 66.6%;
-  padding: 2.5rem 3rem 2.5rem 2rem;
   background: var(--light-color);
   color: var(--dark-color);
 }
 
 .aside {
   width: 33.3%;
-  padding: 2.5rem 2rem 2.5rem 3rem;
   background: var(--dark-color);
   color: var(--light-color);
-}
-
-@media (max-width: 1024px) {
-  body {
-    font-size: .85rem;
-  }
-  .main {
-    background: pink;
-    padding: 2rem 2.5rem 2rem 1.5rem;
-  }
-  .aside {
-    padding: 2rem 1.5rem 2rem 2.5rem;
-  }
-}
-@media (max-width: 768px) {
-  body {
-    font-size: .9rem;
-  }
-  .content {
-    flex-direction: column;
-  }
-  .main {
-    width: 100%;
-    background: lightblue;
-  }
-  .aside {
-    width: 100%;
-  }
-
 }
 
 .name,
 .job-title {
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: .12em;
 }
 
 .name {
   position: relative;
   font-weight: 500;
-  /* font-size: 1.3rem; */
 }
 
 /* horizontal line */
@@ -96,11 +66,11 @@ body {
   position: absolute;
   content: '';
   margin: 0 auto;
-  width: 8em;
-  height: .1rem;
+  width: 10rem;
+  height: 3px;
   left: 0;
   right: 0;
-  bottom: -.9em; 
+  bottom: -.9rem; 
   background: var(--dark-color);
 }
 
@@ -109,7 +79,7 @@ body {
 }
 
 .section {
-  margin-top: 1.2rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -118,12 +88,11 @@ body {
   display: inline;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: .85rem;
 }
 
 /* margin-bottom for .title */
 .title + * {
-  margin-top: 1.2rem;
+  margin-top: 2rem;
 }
 
 /* horizontal line */
@@ -131,9 +100,9 @@ body {
   position: absolute;
   content: '';
   left: 0;
-  right: .5em;
-  bottom: -.7em; 
-  height: .1rem;
+  right: .5rem;
+  bottom: -.7rem; 
+  height: 3px;
 } 
 
 .main .title::after {
@@ -144,14 +113,6 @@ body {
   background: var(--light-color);
 }
 
-.subtitle {
-  text-transform: uppercase;
-  margin-top: .6em;
-  margin-bottom: .6em;
-  font-weight: normal;
-  /* font-size: 1em; */
-}
-
 p {
   font-family: Helvetica, Arial, sans-serif;
 } 
@@ -160,8 +121,8 @@ p {
   margin-left: auto;
   margin-right: auto;
   border: 3px solid #fff;
-  height: calc(15em);
-  width: calc(15em);
+  height: 11rem;
+  width: 11rem;
   border-radius: 50%;
   background: lightcoral;
   overflow: hidden;
@@ -187,15 +148,6 @@ li > i + * {
 }
 .strengths > li:not(:last-child)::after {
   content: ",";
-}
-
-.job {
-  display: flex;
-  justify-content: space-between;
-}
-
-.period {
-  color: #446;
 }
 
 .skills {
