@@ -1,0 +1,273 @@
+:root {
+  box-sizing: border-box;
+  font-size: 1.2em;
+  --bg-color: #eee;
+  --light-color: #f7f7ff;
+  --dark-color: #225;
+  --dark-color-2: #446;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: .9rem;
+  line-height: 1.5em; 
+  min-height: 100vh;
+  font-family: Helvetica, Arial, sans-serif;
+  background: var(--bg-color);
+}
+
+.title,
+.header,
+.contacts {
+  font-family: 'Raleway', Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  margin: 1em auto; 
+  max-width: 1200px;
+  box-shadow: -8px 13px 18px 7px rgba(0,0,0,0.53);
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  padding: 2.5rem 2rem 2.5rem 3rem;
+  background: var(--dark-color);
+  color: var(--light-color);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 66.6%;
+  padding: 2.5rem 3rem 2.5rem 2rem;
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+.header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.name,
+.job-title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+}
+
+.name {
+  position: relative;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* horizontal line */
+.name:after {
+  position: absolute;
+  content: '';
+  margin: 0 auto;
+  width: 7em;
+  height: .1rem;
+  left: 0;
+  right: 0;
+  bottom: -.6em; 
+  background: var(--dark-color);
+}
+
+.job-title {
+  margin-top: 2rem;
+}
+
+.section {
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  position: relative;
+  display: inline;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* margin-bottom for .title */
+.title + * {
+  margin-top: 1.2rem;
+}
+
+/* horizontal line */
+.title:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: .5em;
+  bottom: -.7em; 
+  height: .1rem;
+  background: var(--dark-color);
+} 
+
+.aside .title::after {
+  background: var(--light-color);
+}
+
+.subtitle {
+  text-transform: uppercase;
+  margin-top: .6em;
+  margin-bottom: .6em;
+  font-weight: normal;
+}
+
+.photo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 14em;
+  width: 14em;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.photo > img {
+  width: 100%;
+}
+
+.contacts {
+  list-style: none;
+}
+
+li {
+  margin-top: .5rem;
+}
+
+li > i + * {
+  margin-left: .5em;
+}
+
+.strengths > li {
+  display: inline;
+}
+.strengths > li:not(:last-child)::after {
+  content: ",";
+}
+
+.job {
+  display: flex;
+  justify-content: space-between;
+}
+
+.period {
+  color: var(--dark-color-2);
+}
+
+.skills {
+  list-style: none;
+}
+.skills ul {
+  margin-left: .5rem;
+}
+.skills ul > li {
+  display: inline;
+}
+.skills li > ul > li:not(:last-child)::after {
+  content: ",";
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+a:visited {
+  color: var(--dark-color);
+}
+a:hover {
+  color: #aaa;
+  text-shadow: 0 1px #000;
+}
+a:active {
+  color: red;
+}
+
+.aside a:link {
+  text-decoration: none;
+  color: var(--light-color);
+}
+.aside a:visited {
+  color: var(--light-color);
+}
+.aside a:hover {
+  color: grey;
+}
+.aside a:active {
+  color: red;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1120px) {
+  .aside {
+    width: 37%;
+    padding: 2.2rem 1.3rem 2.2rem 2.0rem;
+  }
+  .main {
+    width: 63%;
+    padding: 2.2rem 2.0rem 2.2rem 1.4rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .container {
+    width: 95%;
+    font-weight: 4.5rem;
+    padding: 3.5rem 2rem;
+    flex-direction: column;
+    background: var(--light-color);
+    color: var(--dark-color);
+  }
+
+  .photo {
+    height: 19em;
+    width: 19em;
+    border-color: #ccc;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .container .header { order: 1; }
+  .container .photo { order: 2; }
+  .container .contacts { order: 3; }
+  .container .summary { order: 4; }
+  .container .education { order: 5; }
+  .container .experience { order: 6; }
+  .container .skills { order: 7; }
+  .container .languages { order: 8; }
+}
+
+@media (max-width: 400px) {
+  .name:after {
+    width: 4em;
+  }
+
+  .photo {
+    height: 15em;
+    width: 15em;
+  }
+}
